@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "pl.xirate.commutetimer",
+      "sha256_cert_fingerprints": [
+        "81:E4:92:64:46:09:28:0D:96:31:98:5E:93:FB:F2:33:31:28:2C:3F:18:BE:09:BD:F8:68:24:42:49:16:B5:6F"
+      ]
+    }
+  }
+]
