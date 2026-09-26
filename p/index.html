@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Shared place · Commute Timer</title>
+<meta property="og:title" content="A place shared from Commute Timer">
+<meta property="og:description" content="Tap to save it in Commute Timer, or open it in Google Maps.">
+<style>
+  :root { --bg: #f4f8f6; --card: #ffffff; --fg: #17201c; --muted: #56625d; --accent: #1f6b52; --on-accent: #ffffff; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0f1412; --card: #1a211e; --fg: #e3ebe7; --muted: #a3b0aa; --accent: #8fd5b8; --on-accent: #0f1412; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 16px;
+         background: var(--bg); color: var(--fg); font: 16px/1.5 system-ui, -apple-system, Roboto, sans-serif; }
+  main { width: 100%; max-width: 420px; background: var(--card); border-radius: 28px; padding: 28px 24px; }
+  .pin { width: 56px; height: 56px; border-radius: 16px; background: var(--accent); color: var(--on-accent);
+         display: grid; place-items: center; margin-bottom: 16px; }
+  h1 { font-size: 26px; line-height: 1.2; margin: 0 0 4px; overflow-wrap: anywhere; }
+  p { margin: 0 0 24px; color: var(--muted); }
+  a.btn { display: block; text-align: center; text-decoration: none; font-weight: 600; padding: 16px;
+          border-radius: 999px; margin-top: 10px; }
+  .primary { background: var(--accent); color: var(--on-accent); }
+  .secondary { border: 1px solid var(--muted); color: var(--fg); }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<main>
+  <div class="pin" aria-hidden="true">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+  </div>
+  <h1 id="name">Shared place</h1>
+  <p id="detail">Shared from Commute Timer</p>
+  <a id="app" class="btn primary hidden" href="#">Save in Commute Timer</a>
+  <a id="maps" class="btn secondary" href="https://www.google.com/maps">Open in Google Maps</a>
+</main>
+<script>
+  // Link format: /p/?ll=52.229700,21.012200&n=Gym&r=150&i=gym
+  var q = new URLSearchParams(location.search);
+  var ll = (q.get("ll") || "").match(/^(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)$/);
+  var name = (q.get("n") || "").slice(0, 30);
+  var radius = parseInt(q.get("r"), 10);
+  var pl = /^pl\b/i.test(navigator.language || "");
+  var t = pl
+    ? { place: "Udostępnione miejsce", from: "Udostępnione z Commute Timer", area: function (m) { return "Obszar " + m + " m · udostępnione z Commute Timer"; },
+        app: "Zapisz w Commute Timer", maps: "Otwórz w Mapach Google", bad: "Ten link nie zawiera miejsca." }
+    : { place: "Shared place", from: "Shared from Commute Timer", area: function (m) { return m + " m area · shared from Commute Timer"; },
+        app: "Save in Commute Timer", maps: "Open in Google Maps", bad: "This link doesn't contain a place." };
+  if (pl) document.documentElement.lang = "pl";
+
+  document.getElementById("name").textContent = name || t.place;
+  document.getElementById("detail").textContent = radius > 0 ? t.area(radius) : t.from;
+  document.getElementById("maps").textContent = t.maps;
+  var app = document.getElementById("app");
+  app.textContent = t.app;
+
+  if (ll) {
+    var maps = "https://www.google.com/maps/search/?api=1&query=" + ll[1] + "," + ll[2];
+    document.getElementById("maps").href = maps;
+    // Some chat apps open links in their own browser instead of the app; this hands it over.
+    if (/Android/i.test(navigator.userAgent)) {
+      app.href = "intent://" + location.host + location.pathname + location.search +
+        "#Intent;scheme=https;package=pl.xirate.commutetimer;S.browser_fallback_url=" + encodeURIComponent(maps) + ";end";
+      app.classList.remove("hidden");
+    }
+  } else {
+    document.getElementById("detail").textContent = t.bad;
+  }
+</script>
+</body>
+</html>
