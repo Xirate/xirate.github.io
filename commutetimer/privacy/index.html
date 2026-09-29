@@ -47,7 +47,7 @@
 </div>
 
 <h2>When location leaves your phone</h2>
-<p>A few features need an online service. They receive only what's needed for the feature, over encrypted connections, and the app doesn't send any identifier for you:</p>
+<p>A few features need an online service. They receive only what's needed for the feature, over encrypted connections. The app itself doesn't send any identifier for you:</p>
 <ul>
   <li><strong>Street names</strong> use Android's built-in geocoding service (provided by Google). It receives the coordinates being looked up: the spot where a traffic jam happened, or the position of the pin on the map.</li>
   <li><strong>Place search</strong> sends what you type, and the area the map shows, to Google Places to suggest addresses and places.</li>
@@ -58,6 +58,7 @@
   <li><strong>Sharing a place</strong> creates a link containing that place's coordinates, name and area size, and sends it through the app you pick, only when you tap Share place. Anyone you send it to can see that location. When the link is opened, it loads a small page from <strong>GitHub Pages</strong> (xirate.github.io). GitHub receives the request, like for any website. The place is read from the link by the page itself and isn't stored anywhere.</li>
   <li><strong>Opening a Google Maps link someone shared with you</strong>: if it's a short link (maps.app.goo.gl), the app asks Google where it leads to find the coordinates. If that doesn't work, it looks up the shared text's address with the geocoding service above.</li>
 </ul>
+<p><strong>Google's map and search components</strong> (Maps SDK and Places SDK) also send Google some technical data on their own: device model and Android version, IP address, crash reports, how the map is moved and zoomed, and a pseudonymous ID that Google uses to count daily users. Google says it doesn't link this to your Google Account and uses it to run and improve its services.</p>
 <p>These providers handle requests under their own privacy policies:
 <a href="https://policies.google.com/privacy">Google</a>,
 <a href="https://osmfoundation.org/wiki/Privacy_Policy">OpenStreetMap Foundation</a>,
