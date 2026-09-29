@@ -5,7 +5,8 @@
       "namespace": "android_app",
       "package_name": "pl.xirate.commutetimer",
       "sha256_cert_fingerprints": [
-        "81:E4:92:64:46:09:28:0D:96:31:98:5E:93:FB:F2:33:31:28:2C:3F:18:BE:09:BD:F8:68:24:42:49:16:B5:6F"
+        "81:E4:92:64:46:09:28:0D:96:31:98:5E:93:FB:F2:33:31:28:2C:3F:18:BE:09:BD:F8:68:24:42:49:16:B5:6F",
+        "05:BD:31:3C:A1:22:CE:D1:62:07:DB:50:C3:13:F5:3F:57:CF:22:39:BC:5E:82:DC:F9:F4:EC:9E:8A:AF:39:07"
       ]
     }
   }

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy · Commute Timer</title>
+<meta name="description" content="Privacy policy for the Commute Timer Android app.">
+<style>
+  :root { --bg: #f4f8f6; --card: #ffffff; --fg: #17201c; --muted: #56625d; --accent: #1f6b52; --line: #dbe4df; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0f1412; --card: #1a211e; --fg: #e3ebe7; --muted: #a3b0aa; --accent: #8fd5b8; --line: #2c3632; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, -apple-system, Roboto, sans-serif; padding: 16px; }
+  main { max-width: 760px; margin: 24px auto; background: var(--card); border-radius: 24px; padding: 32px 28px; }
+  h1 { font-size: 30px; line-height: 1.2; margin: 0 0 4px; }
+  h2 { font-size: 20px; margin: 32px 0 8px; }
+  .date { color: var(--muted); margin: 0 0 20px; }
+  a { color: var(--accent); }
+  ul { padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  .table { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 520px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line); }
+  th { font-size: 14px; color: var(--muted); font-weight: 600; }
+  @media (max-width: 480px) { main { padding: 24px 18px; margin: 8px auto; } }
+</style>
+</head>
+<body>
+<main>
+<h1>Commute Timer – Privacy Policy</h1>
+<p class="date">Last updated: 29 September 2026</p>
+
+<p>Commute Timer ("the app") is made by Marcin Safiejko ("I"). This policy explains what the app does with your data. Short version: <strong>your trips stay on your phone.</strong> There are no accounts, no analytics, no ads, and nothing is sold.</p>
+
+<h2>What the app uses, and why</h2>
+<div class="table">
+<table>
+  <thead><tr><th>Data</th><th>Why</th><th>Where it goes</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Precise location, including in the background</strong></td><td>To notice when you arrive at or leave your saved places, and to record your route while you drive so the app can find traffic jams. This happens even when the app is closed.</td><td>Stored only on your phone.</td></tr>
+    <tr><td><strong>Physical activity</strong> (driving, walking, still)</td><td>To detect when a drive starts and ends.</td><td>Processed by Android on your phone. Not stored by the app.</td></tr>
+    <tr><td><strong>Bluetooth device you choose as your car</strong> (name and address)</td><td>To start the timer when your phone connects to your car.</td><td>Stored only on your phone.</td></tr>
+    <tr><td><strong>Trips, routes, places and traffic jams</strong></td><td>The app's main features: timing, statistics and sharing images.</td><td>Stored only on your phone.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>When location leaves your phone</h2>
+<p>A few features need an online service. They receive only what's needed for the feature, over encrypted connections, and the app doesn't send any identifier for you:</p>
+<ul>
+  <li><strong>Street names</strong> use Android's built-in geocoding service (provided by Google). It receives the coordinates being looked up: the spot where a traffic jam happened, or the position of the pin on the map.</li>
+  <li><strong>Place search</strong> sends what you type, and the area the map shows, to Google Places to suggest addresses and places.</li>
+  <li><strong>The map for choosing places</strong> is Google Maps. Google receives which part of the map is shown, as with any map app.</li>
+  <li><strong>Street names for traffic jams</strong>: when Google only knows a road number (like "Droga krajowa 7"), the app asks <strong>OpenStreetMap's Overpass service</strong> for the road's name, sending the spot where the jam happened.</li>
+  <li><strong>The "City grid" on shared images</strong> downloads streets from <strong>OpenStreetMap's Overpass service</strong>. It receives the rectangular area around a trip's route, when you open a trip or create a share image with the grid turned on. The result is saved on your phone, so each trip's area is requested at most once.</li>
+  <li><strong>Sharing</strong> sends the image you create to the app you pick (for example Instagram), only when you tap Share.</li>
+  <li><strong>Sharing a place</strong> creates a link containing that place's coordinates, name and area size, and sends it through the app you pick, only when you tap Share place. Anyone you send it to can see that location. When the link is opened, it loads a small page from <strong>GitHub Pages</strong> (xirate.github.io). GitHub receives the request, like for any website. The place is read from the link by the page itself and isn't stored anywhere.</li>
+  <li><strong>Opening a Google Maps link someone shared with you</strong>: if it's a short link (maps.app.goo.gl), the app asks Google where it leads to find the coordinates. If that doesn't work, it looks up the shared text's address with the geocoding service above.</li>
+</ul>
+<p>These providers handle requests under their own privacy policies:
+<a href="https://policies.google.com/privacy">Google</a>,
+<a href="https://osmfoundation.org/wiki/Privacy_Policy">OpenStreetMap Foundation</a>,
+<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub</a>.</p>
+
+<h2>Backups</h2>
+<p>Your data is not backed up to the cloud. If you move to a new phone using Android's phone-to-phone transfer, your trips and places come with you.</p>
+
+<h2>Deleting your data</h2>
+<ul>
+  <li>Delete a single trip: open it and tap <strong>Delete trip</strong>.</li>
+  <li>Delete everything: <strong>Settings → Delete all trips</strong>, and remove places in <strong>Settings → Places</strong>.</li>
+  <li>Uninstalling the app deletes all of its data.</li>
+</ul>
+<p>Because nothing is stored on a server, there's nothing for me to delete on my side.</p>
+
+<h2>Children</h2>
+<p>The app is meant for drivers and is not directed at children.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, the new version will be posted at this address with a new date.</p>
+
+<h2>Contact</h2>
+<p><a href="mailto:m.safiejko@gmail.com">m.safiejko@gmail.com</a></p>
+</main>
+</body>
+</html>
